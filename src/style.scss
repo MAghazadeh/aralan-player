@@ -1,0 +1,40 @@
+//@import "../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.audioPlayer {
+  box-shadow: 0 0 32px #00000088;
+  font-family: SansSerif, serif;
+  width: 600px;
+  display: flex;
+
+  canvas {
+    flex: 2;
+    width: 100%;
+    background-color: black;
+  }
+
+  .playList {
+    background-color: blueviolet;
+    display: flex;
+    flex-direction: column;
+    a{
+      padding: .75rem 2.5rem;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      color: #fff;
+      text-decoration: none;
+
+    }
+  }
+}
