@@ -9,6 +9,5 @@ const audioPlayer = new AudioPlayer('.audioPlayer',
         {url: 'songs/KALEO-Way-Down-We-Go-musicfeed.ir_.mp3', name: 'Way Down'},
         {url: 'songs/song.mp3', name: 'Song'},
         {url: 'songs/Tesher - Jalebi Baby.mp3', name: 'Tesher'},
-        {url: 'https://ia902606.us.archive.org/35/items/shortpoetry_047_librivox/song_cjrg_teasdale_64kb.mp3', name: 'afsafsa'},
     ]
 )
