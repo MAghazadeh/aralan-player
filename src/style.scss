@@ -3,70 +3,170 @@
 
 html, body {
   height: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 * {
   box-sizing: border-box;
+  font-family: 'Yekan Bakh', serif;
 }
 
 body {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 2rem 0 0 0;
+  background-image: url("http://localhost:9000/images/default.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 50% 50%;
 }
 
 .audioPlayer {
-  box-shadow: 0 0 32px #00000088;
-  font-family: SansSerif, serif;
-  width: 600px;
   display: flex;
   flex-direction: column;
+  width: 285px;
+  height: 85%;
+  background-color: #4F4489;
+  box-shadow: 0 0 32px #00000088;
+  border-radius: 25px;
+  background-image: url("http://localhost:9000/images/default.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  backdrop-filter: blur(10px);
 
-  canvas {
-    flex: 2;
+  &:before {
+    content: "";
     width: 100%;
+    height: 100%;
+    display: block;
+    background: #00000055;
+    position: absolute;
+    backdrop-filter: blur(4px);
+    z-index: -1;
+    border-radius: 25px;
+  }
+
+  .visualiser {
+    border-radius: 10px 10px 0 0;
+    margin: auto;
+    width: 80%;
+  }
+
+  .title {
+    border-radius: 100%;
+    height: 150px;
+    width: 150px;
+    font-size: 100%;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-shadow: 0 0 20px #00000099,
+    inset 0 0 20px 100px #00000066;
+    margin: -50px auto 35px auto;
+    padding: 10px;
     background-color: black;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-image: url("http://localhost:9000/images/default.jpg");
+  }
+
+  .timer {
+    color: #fff;
+    font-weight: 900;
+    font-size: 1.3rem;
+    text-align: center;
   }
 
   .playList {
-    background-color: blueviolet;
     display: flex;
     flex-direction: column;
+    height: 120px;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #0000002b;
+      border-radius: 25px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #0006;
+      border-radius: 25px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
 
     a {
-      padding: .75rem 2.5rem;
-      display: flex;
+      padding: 5px 25px;
       align-items: center;
       width: 100%;
       color: #fff;
       text-decoration: none;
+      display: block;
+      transition: background-color .3s;
 
+      &:hover {
+        background-color: #00000044;
+      }
     }
   }
 
   .container {
     display: flex;
+    flex-direction: column;
   }
 
   .progressBar {
-    background-color: #fff;
-    height: 3rem;
-    padding: .3rem;
+    padding: 0.3rem;
 
     canvas {
       width: 100%;
       height: 8px;
-      background-color: #000;
+      background-color: #00000055;
+      border-radius: 25px;
+      cursor: pointer;
     }
 
     .container {
+      flex-direction: row;
       justify-content: space-between;
       align-items: center;
     }
 
-    .timer {
-      color: #000;
+
+  }
+
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 19px;
+
+    button {
+      border: 0;
+      background: none;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+
+      &:hover {
+        text-shadow: 0 0 6px #fff;
+      }
     }
 
+    .playPause {
+      font-size: 2.3rem;
+    }
   }
 }
